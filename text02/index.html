@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			form{
+				width:450px;
+				height:400px;
+			}
+			fieldset{
+				margin-top:20px;
+			}
+			legend{
+				color:#f00;
+			}
+			#star{
+				color:#f00;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>请填写个人信息</h3>
+		<form action="#">
+			<fieldset>
+				<legend>基本信息	</legend>
+				姓名<input type="text" name="usr_name" required="required"/>&nbsp;<bin id="star">*</bin>
+				<br />
+				年龄<input type="number" name="usr_age" placeholder="20" />
+			</fieldset>
+			<fieldset id="">
+				<legend>你想在哪里收到邮件？</legend>
+				邮箱<input type="search" list="emails" id="usr_emails" placeholder="请输入邮箱" required="required" />
+				<datalist id="emails">
+					<option>@qq.com</option>
+					<option>@gmail.com</option>
+					<option>@163.com</option>
+					<option>@yahoo.com</option>
+					<option>@126.com</option>
+				</datalist>
+				
+				&nbsp;<bin id="star">*</bin>
+			</fieldset>
+			<fieldset id="">
+				<legend>收入情况</legend>
+				月收入
+				<select name="change" id="">
+					<option>20k+</option>
+					<option>30k+</option>
+					<option>40k+</option>
+					<option>50k+</option>
+				</select>
+				<br />
+				银行卡<input type="number" name="usr_card"/>
+				有效期<input type="date" name="ltime"/>
+			</fieldset>
+			<fieldset id="">
+				<legend>选取提交文件</legend>
+				文件
+				<input type="file" value="选择文件" multiple="multiple"/>
+			</fieldset>
+		</form>
+	</body>
+	<script>			
+		
+		window.onload=function(){
+			var u_mails=document.getElementById("usr_emails");
+			var mails=document.getElementById("emails");
+			var list=mails.getElementsByTagName("option");
+			var len=list.length;
+        	//当松开键盘的按键的时候
+        	u_mails.onkeyup=function(){
+            	var txt=this.value;
+            	var flag="";
+            	if(txt.indexOf("@")>0){
+                	flag=txt.substring(txt.indexOf("@")-1);//获取的输入的@开始的内容
+                	txt=txt.substring(0,txt.indexOf("@"));
+            	}else{
+                	flag="";
+            	}
+            	var val="";
+            	for(var i=0; i<len; i++){
+                	val=list[i].textContent;
+                	val=val.substring(val.indexOf("@"));
+                	list[i].textContent=txt+val;
+            	}
+        	}
+    }
+	</script>
+</html>
