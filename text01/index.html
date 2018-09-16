@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<style>
+			#alls{
+				width:300px;
+				height:auto;
+				background-color: #ccc;
+			}
+			#nav{
+				width:300px;
+				height:40px;
+				background-color:#666;
+			}
+			#nav ul{
+				width:300px;
+				padding:0px;
+				list-style: none;
+			}
+			#nav ul li{
+				float: left;
+				width:110px;
+				height:31px;
+				padding-top:9px;
+				padding-left:40px;
+			}
+			#nav li:hover{
+				background-color:#63f;
+			}
+			#nav a{
+				font-size:14px;
+				color: #fff;
+				text-decoration: none;
+			}
+			#artical{
+				height:350px;
+			}
+			#artical ul{
+				padding-left:10px;
+				padding-right:10px;
+				list-style:none;
+			}
+			#artical li{
+				padding-bottom:10px;
+			}
+			#artical a{
+				float:right;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="alls">
+			<div id="nav">
+				<ul>
+					<li><a href="#">在线音乐</a></li>
+					<li><a href="#">本地音乐</a></li>
+				</ul>
+			</div>
+			<div id="artical">
+				<ul>
+					<li>千千阙歌<a href="#" onclick="disPlay()">播放</a></li>
+					<li>思念人之屋<a href="#" onclick="disPlay()">播放</a></li>
+				</ul>
+			</div>
+			<div id="aud">
+				<audio  controls="controls" width="300" height="20" id="my_aud">
+				<source src="2.mp3"/>
+				<source src="1.ogg"/>
+				您的浏览器不支持
+				</audio>
+			</div>
+		</div>
+	</body>
+	<script>
+		var myaudio = document.getElementById("my_aud");
+		  function disPlay() {
+                if (myaudio.paused){
+                    myaudio.play();
+                } else {
+                    myaudio.pause();
+                }
+            }
+	</script>
+</html>
