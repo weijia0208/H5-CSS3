@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>页面换肤</title>
+		<style type="text/css">
+			fieldset{
+				width:500px;
+				height:150px;
+			}
+			legend{
+				color:#f00;
+			}
+			#top{
+				width:480px;
+				height:20px;
+				border: 1px solid #ccc;
+				margin-left: 10px;
+				margin-right: 10px;
+				padding:10px;
+			}
+			#gray{
+				width:20px;
+				height: 20px;
+				background-color:#aaa;
+				margin-right: 10px;
+				float:left;
+			}
+			#gray:hover{
+				margin-top:-2px;
+			}
+			#blue{
+				width:20px;
+				height: 20px;
+				background-color:#06c;
+				margin-right: 10px;
+				float:left;
+			}
+			#blue:hover{
+				margin-top:-2px;
+			}
+			#purple{
+				width:20px;
+				height: 20px;
+				background-color:#639;
+				margin-right: 10px;
+				float:left;
+			}
+			#purple:hover{
+				margin-top:-2px;
+			}
+			#red{
+				width:20px;
+				height: 20px;
+				background-color:#f00;
+				margin-right: 10px;
+				float:left;
+			}
+			#red:hover{
+				margin-top:-2px;
+			}
+			#orange{
+				width:20px;
+				height: 20px;
+				background-color:#f63;
+				margin-right: 10px;
+				float:left;
+			}
+			#orange:hover{
+				margin-top:-2px;
+			}
+			#green{
+				width:20px;
+				height: 20px;
+				background-color:#6f3;
+				margin-right: 10px;
+				float:left;
+			}
+			#green:hover{
+				margin-top:-2px;
+			}
+			#text{
+				width:460px;
+				height:auto;
+				margin-top:10px;
+				margin-left:30px;
+				margin-right:20px;
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset id="set">
+			<legend>页面换肤</legend>
+			<div id="top">
+				<div id="gray"></div>
+				<div id="purple"></div>
+				<div id="red"></div>
+				<div id="blue"></div>
+				<div id="orange"></div>
+				<div id="green"></div>
+			</div>
+			<div id="text">LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。
+</div>
+		</fieldset>
+	</body>
+	<script>
+		window.onload = function(){
+			var text = document.getElementById('text');
+			var gray = document.getElementById('gray');
+			gray.onclick = function(){
+				text.style.backgroundColor = '#aaa';
+				localStorage.setItem("color",text.style.backgroundColor);
+			}
+			var purple = document.getElementById('purple');
+			purple.onclick = function(){
+				text.style.backgroundColor = '#663399';
+				localStorage.setItem("color",text.style.backgroundColor);
+				
+			}
+			var red = document.getElementById('red');
+			red.onclick = function(){
+				text.style.backgroundColor = '#FF0000';
+				localStorage.setItem("color",text.style.backgroundColor);
+				
+			}
+			var blue = document.getElementById('blue');
+			blue.onclick = function(){
+				text.style.backgroundColor = '#0066CC';
+				localStorage.setItem("color",text.style.backgroundColor);
+				
+			}
+			var orange = document.getElementById('orange');
+			orange.onclick = function(){
+				text.style.backgroundColor = '#FF6633';
+				localStorage.setItem("color",text.style.backgroundColor);
+				
+			}
+			var green = document.getElementById('green');
+			green.onclick = function(){
+				text.style.backgroundColor = '#66FF33';
+				localStorage.setItem("color",text.style.backgroundColor);
+				
+			}
+			text.style.backgroundColor = localStorage.getItem("color");
+		}
+		
+		
+	</script>
+</html>
