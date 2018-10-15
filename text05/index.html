@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#canvas{
+				
+				border: 1px solid #eee;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		<script>
+			var canvas1 = document.getElementById("canvas");
+			var context = canvas1.getContext("2d");			
+			//钟表
+			function draw(){
+				context.clearRect(0,0,500,500); 
+				
+				
+				context.beginPath();
+				context.arc(250,250,200,0,2*Math.PI);
+				context.strokeStyle = "aquamarine";
+				context.lineWidth = 5;
+				context.stroke();
+				context.closePath();
+	
+				context.save();
+				context.translate(250,250);
+				
+				for(var i=1;i<=60;i++){
+					context.beginPath();
+					context.lineTo(0,-190);
+					context.lineTo(0,-180);
+					context.rotate(6/180*Math.PI);
+					context.strokeStyle="#ccc";
+					context.lineWidth = 3;
+					context.stroke();
+					context.closePath();
+				}
+				
+				for(var i=1;i<=12;i++){
+					context.beginPath();
+					context.lineTo(0,-190);
+					context.lineTo(0,-175);
+					context.rotate(30/180*Math.PI);
+					context.strokeStyle="red";
+					context.lineWidth = 3;
+					context.stroke();
+					context.closePath();
+				}
+				
+				for(var i=1;i<=12;i++){
+					context.beginPath();
+					var rad = 2 * Math.PI/12*(i-3);
+	    			var x = Math.cos(rad) * (190 - 30);
+	    			var y = Math.sin(rad) * (190 - 30);
+					context.fillText(i,x,y);
+					context.closePath();
+				}
+				
+				var time = new Date();
+				var hours = time.getHours();
+				var minutes  = time.getMinutes();
+				var seconds = time.getSeconds();
+				hours = hours > 12 ? hours - 12 : hours;
+	    		var hour = hours + minutes / 60;
+	    		var minute = minutes + seconds / 60;
+	    		
+				context.beginPath();
+				context.save();
+				var r = hour * 30 * Math.PI / 180;
+				context.rotate(r);
+				context.moveTo(0,10);
+				context.lineTo(0,-90);
+				context.strokeStyle = "blueviolet";
+				context.lineWidth = 5;
+				context.stroke();
+				context.restore();
+				context.closePath();
+				
+				context.beginPath();
+				context.save();
+				context.rotate(minute * 6 * Math.PI / 180);				
+				context.moveTo(0,10);
+				context.lineTo(0,-120);
+				context.strokeStyle = "darksalmon";
+				context.lineWidth = 4;
+				context.stroke();
+				context.restore();
+				context.closePath();
+				
+				
+				context.beginPath();
+				context.save();
+				context.rotate(seconds * 6 * Math.PI / 180);
+				context.moveTo(0,-10);
+				context.lineTo(0,140);
+				context.strokeStyle = "gold";
+				context.lineWidth = 2;
+				context.stroke();
+				context.restore();
+				context.closePath();
+				
+				context.restore();
+			}
+			setInterval(draw,1000);
+		</script>
+	</body>
+</html>
