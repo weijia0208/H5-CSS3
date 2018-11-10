@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Bootscrap响应式页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+			*{
+				margin:0;
+				padding: 0;
+			}
+			.navbar{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				list-style: none;
+				/*margin-left:-55px;*/
+			}
+			.col-md-4{
+				margin-top:10px;
+			}
+			.col-md-8{
+				margin-top:10px;
+			}
+			.footer{
+				height:50px;
+				background-color:black;
+			}
+			.mao{
+				float:right;
+				margin-top:-50px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--导航栏-->
+		<nav class="navbar navbar-inverse" id="top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-1">
+				      <span class="sr-only">导航开关</span>
+				      <span class="icon-bar"></span>
+				      <span class="icon-bar"></span>
+				      <span class="icon-bar"></span>
+				    </button>
+			    	<a href="#" class="navbar-brand"><span class="glyphicon glyphicon-user"></span>Brand</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-1">
+					<ul class="nav navbar-nav">
+				      <li class="active"><a href="#">Link</a></li>
+				      <li><a href="#">Link1</a></li>
+				      <li><a href="#">Link2</a></li>
+				      <li><a href="#">Link3</a></li>
+				      <li><a href="#">Link4</a></li>    
+				    </ul>  
+				</div>
+			</div>
+		</nav>
+			
+		<!--banner-->
+		<div class="carousel slide" id="generic" data-ride="carousel">
+			<ol class="carousel-indicators">
+		      <li data-target="#generic" data-slide-to="0" class="active"></li>
+		      <li data-target="#generic" data-slide-to="1"></li>
+		      <li data-target="#generic" data-slide-to="2"></li>
+		    </ol>
+			<div class="carousel-inner">
+				<div class="item active"><img src="img/banner.jpg" alt="" /></div>
+				<div class="item"><img src="img/banner.jpg" alt="" /></div>
+				<div class="item"><img src="img/banner.jpg" alt="" /></div>
+			</div>
+		</div>
+		
+		<!--内容-->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h2>Content area1</h2>
+					<p>Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.</p>
+				</div>
+				<div class="col-md-4">
+					<h2>Content area2</h2>
+					<p>Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.</p>
+				</div>
+				<div class="col-md-4">
+					<h2>Content area3</h2>
+					<p>Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.</p>
+				</div>
+			</div>
+			<div class="row">
+				<h2>Repotr Table</h2>
+				<!--<span>Form Detail</span>-->
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>first</th>
+							<th>second</th>
+							<th>third</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>penatibus et magnis</td>
+							<td>what</td>
+							<td>messages</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>penatibus et</td>
+							<td>you</td>
+							<td>information</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>nulia non</td>
+							<td>test</td>
+							<td>testing</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<img src="img/pic.jpg" alt="" />
+				</div>
+				<div class="col-md-6">
+					<h2>Cum sociis natoque penatibus et magnis dis parturient montes</h2>
+					<p>nascetur ridiculus mus Nuiiam id dolor id nibh ultncies vehicula Cum sociis natoque penatibus er magnis dis parturient montes nascetur ridiculus mus</p>
+					<div class="col-md-6">
+						<ul>
+							<li>Maecenas sed diam eget risus</li>
+							<li>Maecenas sed diam eget risus</li>
+							<li>Maecenas sed diam eget risus</li>
+							<li>Maecenas sed diam eget risus</li>
+							<li>Maecenas sed diam eget risus</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<img src="img/1.jpg" alt="" />
+					</div>			
+				
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<h2>Images Show</h2>
+					<div class="col-xs-4"><img src="img/2.jpg" alt="" /></div>
+					<div class="col-xs-4"><img src="img/3.jpg" alt="" /></div>
+					<div class="col-xs-4"><img src="img/4.jpg" alt="" /></div>
+					<p>nascetur ridiculus mus Nuiiam id dolor id nibh ultncies vehicula Cum sociis natoque penatibus er magnis dis parturient montes nascetur ridiculus mus</p>
+				</div>
+				<div class="col-md-4">
+					<form role="form" class="form-inline">
+						<h2>User Login</h2>
+						<div class="col-md-4"><label for="exampleInputEmail2">Email</label></div>
+						<div class="col-md-8"><input type="text" class="form-control" id="exampleInputEmail2" placeholder="Email"></div>
+						<div class="col-md-4"><label for="exampleInputEmail2">Password</label></div>
+						<div class="col-md-8"><input type="text" class="form-control" id="exampleInputEmail2" placeholder="Password"></div>
+						<div class="col-md-4"></div>
+						<div class="col-md-8">
+							<div class="checkbox">
+						     	<label>
+						      		<input type="checkbox">bule
+						      	<input type="checkbox">red
+						    	</label>
+							</div>
+						</div>
+					</form>
+					<div class="col-md-4"></div>
+					<div class="col-md-8">
+						<button type="button" class="btn btn-info">Sign in</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--footer-->
+		<div class="footer">
+			<a href="#">网站地图</a>
+			<p>Copyright @ www.xoox.com</p>
+			<a href="#top" class="mao">返回顶部</a>
+		</div>
+		<script src="js/jquery.js"></script>    
+    	<script src="js/bootstrap.min.js"></script>  
+	</body>
+</html>
